@@ -1,33 +1,24 @@
-import { Spinner } from "@/components/ui/spinner";
-import {
-  ClerkProvider,
-  SignedIn,
-  SignedOut,
-  SignUpButton,
-  SignOutButton,
-} from "@clerk/nextjs";
+//   import {
+//   ClerkProvider,
+// } from "@clerk/nextjs";
+import CTA from "@/components/landing/CTA";
+import Footer from "@/components/landing/Footer";
+import Header from "@/components/landing/Header";
+import Hero from "@/components/landing/Hero";
+import HowItWorks from "@/components/landing/HowItWorks";
+import PricingSections from "@/components/landing/PricingSections";
+import WhatToAsk from "@/components/landing/WhatToAsk";
 
 export default function Home() {
   return (
-    <ClerkProvider>
-      <div className="flex h-screen items-center justify-center">
-        <h1 className="text-4xl font-bold text-center text-bottom">
-          Denta Glow is coming soon
-        </h1>
-        <Spinner />
-
-        <div>
-          <SignedOut>
-            <SignUpButton mode="modal" />
-          </SignedOut>
-        </div>
-
-        <div>
-          <SignedIn>
-            <SignOutButton />
-          </SignedIn>
-        </div>
-      </div>
-    </ClerkProvider>
+    <div className="min-h-screen bg-background">
+      <Header />
+      <Hero/>
+      <HowItWorks/>
+      <WhatToAsk/>
+      <PricingSections/>
+      <CTA/>
+      <Footer/>
+    </div>
   );
 }
