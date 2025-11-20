@@ -1,10 +1,9 @@
 "use server";
 
+import { Gender } from "@prisma/client";
 import { prisma } from "../prisma";
 import { generateAvatar } from "../utils";
 import { revalidatePath } from "next/cache";
-import { Gender } from "@prisma/client";
-
 
 export async function getDoctors() {
   try {
@@ -33,7 +32,6 @@ interface CreateDoctorInput {
   gender: Gender;
   isActive: boolean;
 }
-
 
 export async function createDoctor(input: CreateDoctorInput) {
   try {
